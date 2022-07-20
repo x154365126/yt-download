@@ -7,8 +7,9 @@ from yt_download.pipeline.steps.postflight import Postflight
 from yt_download.pipeline.pipeline import Pipeline
 from yt_download.utils import Utils
 
+# 填入撥放清單網址
 playlistLink = "https://www.youtube.com/watch?v=DOzpsXZS-j0&list=PLB8Nt5W7hnKA_pG2qljWbgVmJPobrLTm4&ab_channel=MoriCalliopeCh.hololive-EN"
-CHANNEL_ID = playlistLink.split('channel=')[-1]
+CHANNEL_ID = playlistLink.split('=')[-2]
 
 
 def main():

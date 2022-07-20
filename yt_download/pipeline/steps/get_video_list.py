@@ -8,14 +8,16 @@ class GetVideoList(Step):
         channel_id = inputs['channel_id']
         playlist = Playlist(inputs['playlist_link'])
 
+        # 如果video_list存在, 印出訊息
         if utils.video_list_file_exists(channel_id):
             print('Found existing video list for channel id')
             return self.read_file(utils.get_video_list_filepath(channel_id))
 
-        print("Total video to download: ", len(playlist.video_urls))
-        print("\n\n Links of the youtube videos\n")
+        print("Total video to download: ", len(playlist))
+        print("\n\n youtube video Links \n")
 
         print(playlist)
+        # 將影片清單寫入.txt檔
         self.write_to_file(playlist, utils.get_video_list_filepath(channel_id))
         return playlist
 
