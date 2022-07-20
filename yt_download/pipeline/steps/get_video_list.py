@@ -4,7 +4,7 @@ from pytube import Playlist
 
 
 class GetVideoList(Step):
-    def process(self, data, inputs):
+    def process(self, data, inputs, utils):
         playlist = Playlist(inputs['playlist_link'])
 
         print("Total video to download: ", len(playlist.video_urls))
